@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "@/Components/Navbar";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -68,11 +69,12 @@ export default function Home() {
   return (
     <>
       <ToastContainer theme="dark"></ToastContainer>
+      <Navbar/>
       <form
         onSubmit={onSubmitHandler}
         className="flex items-center flex-col gap-2 w-[80%] max-w-[600px] mt-24 px-2 mx-auto"
       >
-        <h1 className="text-3xl mb-5 font-semibold">Air Todo/极简待办</h1>
+        <h1 className="text-3xl mb-5 font-semibold">Air Todo</h1>
         <input
           value={formData.title}
           onChange={onChangeHandler}
